@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
+import '../App.css'
 
 const AllocationForm = (props) => {
-    const { dispatch, remaining } = useContext(AppContext);
+    const { dispatch, remaining, selectedCurrency } = useContext(AppContext);
 
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
@@ -34,7 +35,8 @@ const AllocationForm = (props) => {
     };
 
     return (
-        <div>
+
+        <div className="allocation-form-container">
             <div className='row'>
 
                 <div className="input-group mb-3" style={{ marginLeft: '2rem' }}>

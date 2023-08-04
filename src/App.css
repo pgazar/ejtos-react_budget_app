@@ -32,7 +32,75 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+
+}
+
+
+
+.budget-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spent-currency-container {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgreen;
+  /* Light green background */
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.spent-so-far {
+  margin-bottom: 10px;
+}
+
+
+/* ... (existing styles) */
+
+.currency-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* Align to the right */
+  margin-top: 1px;
+  background-color: greenyellow;
+  border-radius: 5px;
+}
+
+
+
+
+.currency-main {
+
+  color: white;
+  font-size: large;
+  font-weight: 500;
+  flex-direction: column;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  justify-content: space-between;
+}
+
+.currency-select {
+  background-color: greenyellow;
+  border: none;
+  color: white;
+  font-size: medium;
+  border-radius: 4px;
+  padding: 3px 10px;
+  cursor: pointer;
+  align-items: baseline;
+}
+
+
+.currency-option {
+  background-color: green;
+  color: white;
 }

@@ -1,30 +1,42 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Select from 'react-select';
+import { AppContext } from '../context/AppContext';  // Import the context here
 
 const CustomSelect = () => {
+    const { currency, dispatch } = useContext(AppContext);  // Access currency and dispatch
+
     const options = [
-        { value: 'dollar', label: '$ Dollar' },
-        { value: 'pound', label: '£ Pound' },
-        { value: 'euro', label: '€ Euro' },
-        { value: 'rupee', label: '₹ Ruppee' },
+        { value: '$', label: '$ Dollar' },
+        { value: '£', label: '£ Pound' },
+        { value: '€', label: '€ Euro' },
+        { value: '₹', label: '₹ Rupee' },
     ];
 
     const customStyles = {
         control: (provided) => ({
             ...provided,
-            backgroundColor: 'greenyellow', // Set background color
+            backgroundColor: 'greenyellow',
+
+
         }),
         option: (provided, state) => ({
             ...provided,
-            backgroundColor: state.isSelected ? 'white' : 'greenyellow', // Set background color
-            color: state.isSelected ? 'black' : 'white', // Set text color
+
+            backgroundColor: state.isSelected ? 'white' : 'greenyellow',
+            color: 'black',
         }),
     };
 
-    const [selectedOption, setSelectedOption] = useState(null);
+    // This finds the corresponding option based on the currency value
+    const selectedOption = options.find(option => option.value === currency);
 
     const handleChange = (selectedOption) => {
-        setSelectedOption(selectedOption);
+        dispatch({
+            type: 'CHG_CURRENCY',
+            payload: selectedOption.value,
+
+        });
+
     };
 
     return (

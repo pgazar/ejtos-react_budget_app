@@ -11,7 +11,7 @@ const Currency = () => {
         const selectedCurrency = e.target.value;
         dispatch({
             type: 'CHG_CURRENCY',
-            payload: selectedCurrency,
+            payload: selectedCurrency.value,
         });
 
     };
@@ -19,7 +19,8 @@ const Currency = () => {
     return (
         <div className="currency-dropdown">
             <label className="currency-main">Currency:</label>
-            <CustomSelect />
+            <CustomSelect value={currency}
+                onChange={handleCurrencyChange} />
 
         </div>
     );

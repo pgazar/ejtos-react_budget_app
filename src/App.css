@@ -71,6 +71,7 @@
   margin-top: 1px;
   background-color: greenyellow;
   border-radius: 5px;
+
 }
 
 
@@ -103,4 +104,30 @@
 .currency-option {
   background-color: green;
   color: white;
+}
+
+.increase-button {
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  /* makes the button round */
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.decrease-button {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  /* makes the button round */
+  width: 30px;
+  height: 30px;
+  text-align: center;
 }

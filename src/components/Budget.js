@@ -3,11 +3,10 @@ import React, { useContext, useState, useEffect } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const Budget = () => {
-    const { budget, expenses, dispatch } = useContext(AppContext);
+    const { budget, expenses, dispatch, currency } = useContext(AppContext);
     const [typedBudget, setTypedBudget] = useState(budget);
 
     const totalExpenses = expenses.reduce((total, expense) => total + expense.cost, 0);
-
 
     useEffect(() => {
         setTypedBudget(budget);
@@ -42,10 +41,10 @@ const Budget = () => {
     };
 
     return (
-
         <div className='alert alert-secondary'>
             <div className="budget-container">
                 <span>Budget: </span>
+                <span>{currency}</span>
                 <input
                     type='number'
                     value={typedBudget}
@@ -53,14 +52,12 @@ const Budget = () => {
                     onChange={handleBudgetChange}
                     onBlur={saveBudget}
                 />
-
             </div>
         </div>
     );
 };
 
 export default Budget;
-
 
 
 
